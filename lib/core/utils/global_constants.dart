@@ -4,7 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 const String uri_1 = "https://transfer-dayo-niyi.onrender.com";
-const String uri_2 = "http://192.168.186.149:8000";
+const String uri_2 = "https://e-storegpt-server.onrender.com";
 
 //image picker
 Future<List<File>> pickImages() async {

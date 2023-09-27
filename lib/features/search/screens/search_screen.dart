@@ -33,7 +33,8 @@ class _SearchScreenState extends State<SearchScreen> {
     "Can you recommend some high quality washing machines that are very user friendly",
     "Can you tell me who you are and what you can do please",
     "Generate a poem for me please",
-    "Are you constantly improving?"
+    "Are you constantly improving?",
+    "Solve for x in x-2+2=0 assuning x is a whole number",
   ];
   List<Color> qucikSearchContainerColor = [
     Color(0xFF70d5f8),
@@ -41,6 +42,7 @@ class _SearchScreenState extends State<SearchScreen> {
     Color(0xFFffc8a7),
     Color(0xFFfea37b),
     Color(0xFF70d5f8),
+    Color(0xFFd3c8ea),
   ];
 
   void searchProduct() async {
@@ -324,7 +326,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           height: 10,
                         ),
                         SizedBox(
-                          height: 350,
+                          height: 440,
                           child: ListView.builder(
                             itemCount: qucikSearchContainerColor.length,
                             scrollDirection: Axis.vertical,
