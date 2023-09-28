@@ -29,12 +29,13 @@ class _SearchScreenState extends State<SearchScreen> {
   bool isLoading = false;
   bool responseHasEnded = false;
   List<String> suggestionPrompts = [
-    "Do you have any discounts available for iphone 14?",
+    "I want to buy a discounted google pixel",
     "Can you recommend some high quality washing machines that are very user friendly",
+    "I need a very high quality an iphone 14",
     "Can you tell me who you are and what you can do please",
     "Generate a poem for me please",
     "Are you constantly improving?",
-    "Solve for x in x-2+2=0 assuning x is a whole number",
+    // "Solve for x in x-2+2=0 assuning x is a whole number",
     // "Solve for x in x-2+2=0 assuning x is a whole number",
     // "Solve for x in x-2+2=0 assuning x is a whole number",
   ];
@@ -53,6 +54,7 @@ class _SearchScreenState extends State<SearchScreen> {
     setState(() {
       isLoading = true;
       hasTappedQuickSearch = true;
+      responseHasEnded = false;
     });
 
     final result =
