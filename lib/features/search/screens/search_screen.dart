@@ -29,12 +29,14 @@ class _SearchScreenState extends State<SearchScreen> {
   bool isLoading = false;
   bool responseHasEnded = false;
   List<String> suggestionPrompts = [
-    "Do you have any discounts available for iphone 14 pro?",
+    "Do you have any discounts available for iphone 14?",
     "Can you recommend some high quality washing machines that are very user friendly",
     "Can you tell me who you are and what you can do please",
     "Generate a poem for me please",
     "Are you constantly improving?",
     "Solve for x in x-2+2=0 assuning x is a whole number",
+    // "Solve for x in x-2+2=0 assuning x is a whole number",
+    // "Solve for x in x-2+2=0 assuning x is a whole number",
   ];
   List<Color> qucikSearchContainerColor = [
     Color(0xFF70d5f8),
@@ -43,6 +45,8 @@ class _SearchScreenState extends State<SearchScreen> {
     Color(0xFFfea37b),
     Color(0xFF70d5f8),
     Color(0xFFd3c8ea),
+    // Color(0xFFd3c8ea),
+    // Color(0xFFd3c8ea),
   ];
 
   void searchProduct() async {
@@ -326,32 +330,37 @@ class _SearchScreenState extends State<SearchScreen> {
                           height: 10,
                         ),
                         SizedBox(
-                          height: 440,
+                          height: getValueForScreenType<double>(
+                            context: context,
+                            mobile: 420,
+                            tablet: 420,
+                            desktop: 360,
+                          ),
                           child: ListView.builder(
                             itemCount: qucikSearchContainerColor.length,
                             scrollDirection: Axis.vertical,
                             itemBuilder: (BuildContext context, int index) {
-                              return Column(
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      smartSearchController.text =
-                                          suggestionPrompts[index];
-                                      smartSearchController.selection =
-                                          TextSelection.fromPosition(
-                                        TextPosition(
-                                            offset: smartSearchController
-                                                .text.length),
-                                      );
-                                      searchProduct();
-                                    },
-                                    child: QuickSearchContainer(
+                              return GestureDetector(
+                                onTap: () {
+                                  smartSearchController.text =
+                                      suggestionPrompts[index];
+                                  smartSearchController.selection =
+                                      TextSelection.fromPosition(
+                                    TextPosition(
+                                        offset:
+                                            smartSearchController.text.length),
+                                  );
+                                  searchProduct();
+                                },
+                                child: Column(
+                                  children: [
+                                    QuickSearchContainer(
                                       borderColor:
                                           qucikSearchContainerColor[index],
                                       searchText: suggestionPrompts[index],
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               );
                             },
                           ),
